@@ -55,8 +55,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false
 					  }
 					
-					const data = await resp.jsonify();
-					  console.log("This came from the backend", data);
+					const data = await resp.json();
+					  console.log("This came from the backend", data.access_token);
 					  sessionStorage.setItem("token", data.access_token);
 					  setStore({
 						token: data.access_token
